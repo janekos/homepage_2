@@ -1,6 +1,18 @@
 class Main{
     constructor(){
-        console.log("erro");
+        
+        this.bindEvents();
+    }
+    
+    navCallback(e){
+        grab("menuBtn").classList.toggle("closedNav");
+        grab("navItems").classList.toggle("closedNav");
+    }
+    
+    bindEvents(){
+        grab("menuBtn").addEventListener("click", this.navCallback);
+        
+        grab("closeNav").addEventListener("click", this.navCallback);
     }
 }
 

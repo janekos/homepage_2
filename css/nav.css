@@ -1,3 +1,55 @@
 #nav{
-    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.triangleBounds{
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+#menuBtn{
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    height: 300px;
+    width: 300px;
+    background-image: url(../assets/menu.png);
+    background-size: contain;
+    transition: all 0.5s;
+}
+
+#menuBtn.closedNav{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#closeNav{
+    color: white;
+    font-size: 50px;
+}
+
+#navItems{
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    top: -170px;
+    left: -170px;
+    height: 600px;
+    width: 600px;
+    background-image: url(../assets/menu_expanded.png);
+    background-size: contain;
+    transition: all 0.5s;
+}
+
+#navItems.closedNav{
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    left: 0;
+}
+
+.navItem{
+    color:white;
 }
