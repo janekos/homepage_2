@@ -1,55 +1,67 @@
 #nav{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.triangleBounds{
-    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
-    clip-path: polygon(0 0, 0% 100%, 100% 0);
-}
-
-#menuBtn{
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
-    height: 300px;
-    width: 300px;
-    background-image: url(../assets/menu.png);
-    background-size: contain;
-    transition: all 0.5s;
-}
-
-#menuBtn.closedNav{
-    opacity: 0;
-    visibility: hidden;
-}
-
-#closeNav{
-    color: white;
-    font-size: 50px;
-}
-
-#navItems{
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
+    position: fixed;
     top: -170px;
     left: -170px;
     height: 600px;
     width: 600px;
-    background-image: url(../assets/menu_expanded.png);
+    background-image: url(../assets/menu.png);
     background-size: contain;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
+#nav.openedNav{top: 0; left: 0;}
 
-#navItems.closedNav{
+#openNav{top:273px; left: 163px;}
+#closeNav{top: 96px; left: 8px;}
+#navItem1{top: 232px; left: 22px;}
+#navItem2{top: 370px; left: 30px;}
+#navItem3{top: 52px; left: 204px;}
+#navItem4{top: 145px; left: 258px;}
+
+.closedNavElem{
     opacity: 1;
     visibility: visible;
-    top: 0;
-    left: 0;
+    font-size: 80px;
+    transition: all 0.2s;
+}
+
+.closedNavElem.openedNav{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.openNavElem{
+    opacity: 0;
+    visibility: hidden;
+    font-size: 55px;
+    transition: all 0.2s;
+}
+
+.openNavElem.openedNav{
+    opacity: 1;
+    visibility: visible;
 }
 
 .navItem{
+    position: absolute;
+    display: inline-block;
     color:white;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    width: 100px;
+    transform: rotate(-45deg);    
+    text-shadow: 1px 1px black, 
+                 2px 2px black, 
+                 3px 3px black, 
+                 4px 4px black, 
+                 5px 5px black, 
+                 6px 6px black,
+                 7px 7px black,
+                 8px 8px black,
+                 9px 9px black,
+                 10px 10px black,
+                 11px 11px black,
+                 12px 12px black,
+                 13px 13px black,
+                 14px 14px black;
 }
