@@ -4,23 +4,35 @@
     left: -170px;
     height: 600px;
     width: 600px;
+    font-family: "Press Start 2P";
     background-image: url(../assets/menu.png);
     background-size: contain;
     transition: all 0.2s;
 }
 #nav.openedNav{top: 0; left: 0;}
 
-#openNav{top:273px; left: 163px;}
-#closeNav{top: 96px; left: 8px;}
-#navItem1{top: 232px; left: 22px;}
-#navItem2{top: 370px; left: 30px;}
-#navItem3{top: 52px; left: 204px;}
-#navItem4{top: 145px; left: 258px;}
+#nav > a:hover,
+#nav > a:visited,
+#nav > a:link,
+#nav > a:active{text-decoration: none;}
+
+#openNav{top: 243px; left: 170px;}
+#closeNav{top: -20px; left: 30px;}
+#navItem1{top: 228px; left: 20px;}
+#navItem2{top: 320px; left: 8px;}
+#navItem3{top: 56px; left: 210px;}
+#navItem4{top: 96px; left: 250px;}
+
+#openNav{font-size: 50px;}
+#closeNav{font-size: 140px;}
+#navItem1,
+#navItem2,
+#navItem3,
+#navItem4{font-size: 36px;}
 
 .closedNavElem{
     opacity: 1;
     visibility: visible;
-    font-size: 80px;
     transition: all 0.2s;
 }
 
@@ -32,7 +44,6 @@
 .openNavElem{
     opacity: 0;
     visibility: hidden;
-    font-size: 55px;
     transition: all 0.2s;
 }
 
@@ -47,21 +58,25 @@
     color:white;
     margin: 0px;
     padding: 0px;
-    height: 20px;
-    width: 100px;
-    transform: rotate(-45deg);    
-    text-shadow: 1px 1px black, 
-                 2px 2px black, 
-                 3px 3px black, 
-                 4px 4px black, 
-                 5px 5px black, 
-                 6px 6px black,
-                 7px 7px black,
-                 8px 8px black,
-                 9px 9px black,
-                 10px 10px black,
-                 11px 11px black,
-                 12px 12px black,
-                 13px 13px black,
-                 14px 14px black;
+    transform: rotate(-45deg);
+    text-shadow: 1px 1px 8px lightgray, 
+                 2px 2px 8px lightgray, 
+                 3px 3px 8px lightgray, 
+                 4px 4px 8px lightgray, 
+                 5px 5px 8px lightgray;
+}
+
+.selected{
+    text-decoration: underline !important;
+}
+
+.navItem:hover{
+    animation: shakeNavElement 0.2s infinite;
+}
+
+@keyframes shakeNavElement {
+    0%   {transform: rotate(-47deg);}
+    25%  {transform: rotate(-49deg);}
+    50%  {transform: rotate(-47deg);}
+    100% {transform: rotate(-45deg);}
 }

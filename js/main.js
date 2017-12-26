@@ -1,29 +1,39 @@
 class Main{
-    constructor(){
-        
+    constructor(){        
         this.bindEvents();
     }
     
     navCallback(e){
         grab("#nav").classList.toggle("openedNav");
-        applyFnClass(grab(".closedNavElem"), function(element){
-            console.log(element.id);
+        applyFnClass(grab(".closedNavElem"), (element)=>{
             element.classList.toggle("openedNav");
         });
-        applyFnClass(grab(".openNavElem"), function(element){
-            console.log(element.id);
+        applyFnClass(grab(".openNavElem"), (element)=>{
             element.classList.toggle("openedNav");
         });
     }
     
     bindEvents(){
-        grab("#openNav").addEventListener("click", this.navCallback);
         
-        grab("#closeNav").addEventListener("click", this.navCallback);
+        let navItemClass = grab(".navItem");
         
-        /*applyEventListenerClass(grab(".navItem"), "click", (e)=>{
-            console.log(e.target.dataset.href);
-        });*/
+        window.addEventListener("hashchange", (e)=>{
+            console.log(window.location.hash);
+        });
+        
+        applyEventListenerClass(navItemClass, "click", (e)=>{
+            if(e.target.id === "openNav" || e.target.id === "closeNav"){
+                this.navCallback();
+            }else{
+                applyFnClass(navItemClass,(element)=>{
+                    try{
+                        element.classList.remove("selected");
+                    }catch(err){}
+                });
+                e.target.classList.add("selected");
+            }
+        });
+        
     }
 }
 
