@@ -1,56 +1,34 @@
 #nav{
     position: fixed;
-    top: -170px;
-    left: -170px;
-    height: 600px;
-    width: 600px;
+    top: -207px;
+    left: -367px;
+    height: 400px;
+    width: 720px;
     font-family: "Press Start 2P";
-    background-image: url(../assets/menu.png);
-    background-size: contain;
-    transition: all 0.2s;
-}
-#nav.openedNav{top: 0; left: 0;}
-
-#nav > a:hover,
-#nav > a:visited,
-#nav > a:link,
-#nav > a:active{text-decoration: none;}
-
-#openNav{top: 243px; left: 170px;}
-#closeNav{top: -20px; left: 30px;}
-#navItem1{top: 228px; left: 20px;}
-#navItem2{top: 320px; left: 8px;}
-#navItem3{top: 56px; left: 210px;}
-#navItem4{top: 96px; left: 250px;}
-
-#openNav{font-size: 50px;}
-#closeNav{font-size: 140px;}
-#navItem1,
-#navItem2,
-#navItem3,
-#navItem4{font-size: 36px;}
-
-.closedNavElem{
-    opacity: 1;
-    visibility: visible;
+    transform: rotate(-45deg);
     transition: all 0.2s;
 }
 
-.closedNavElem.openedNav{
-    opacity: 0;
-    visibility: hidden;
-}
+#nav.openedNav{top: -87px; left: -247px;}
 
-.openNavElem{
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s;
-}
+#navBackground{display: flex; flex-wrap: wrap;}
 
-.openNavElem.openedNav{
-    opacity: 1;
-    visibility: visible;
-}
+#navButtons > a:hover,
+#navButtons > a:visited,
+#navButtons > a:link,
+#navButtons > a:active{text-decoration: none;}
+
+#openNav{top: 335px; left: 255px; font-size: 54px;}
+#closeNav{top: 20px; left: 315px; font-size: 170px;}
+#home{top: 265px; left: 180px; font-size: 36px;}
+#fun{top: 265px; left: 430px; font-size: 36px;}
+#projects{top: 345px; left: 75px; font-size: 36px;}
+#contact{top: 345px; left: 400px; font-size: 36px;}
+
+.closedNavElem{opacity: 1; visibility: visible; transition: all 0.2s;}
+.closedNavElem.openedNav{opacity: 0; visibility: hidden;}
+.openNavElem{opacity: 0; visibility: hidden; transition: all 0.2s;}
+.openNavElem.openedNav{opacity: 1; visibility: visible;}
 
 .navItem{
     position: absolute;
@@ -58,7 +36,6 @@
     color:white;
     margin: 0px;
     padding: 0px;
-    transform: rotate(-45deg);
     text-shadow: 1px 1px 8px lightgray, 
                  2px 2px 8px lightgray, 
                  3px 3px 8px lightgray, 
@@ -66,17 +43,12 @@
                  5px 5px 8px lightgray;
 }
 
-.selected{
-    text-decoration: underline !important;
-}
+.selected{text-decoration: underline !important;}
 
-.navItem:hover{
-    animation: shakeNavElement 0.2s infinite;
-}
-
+.navItem:hover{animation: shakeNavElement 0.2s infinite;}
 @keyframes shakeNavElement {
-    0%   {transform: rotate(-47deg);}
-    25%  {transform: rotate(-49deg);}
-    50%  {transform: rotate(-47deg);}
-    100% {transform: rotate(-45deg);}
+    0%   {transform: rotate(-2deg);}
+    25%  {transform: rotate(-4deg);}
+    50%  {transform: rotate(-2deg);}
+    100% {transform: rotate(0deg);}
 }

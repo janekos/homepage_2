@@ -1,13 +1,52 @@
+/*
+colors:
+rgb(102, 0, 153)
+rgb(102, 51, 153)
+rgb(51, 0, 102)
+rgb(51, 0, 51)
+*/
 body, html{
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    font-family: "Lucida Console";
+    /*height: 100%;*/
+    font-family: "Roboto Condensed";
+    /*background-color: rgb(51, 0, 102);
+    color: white;*/
 }
 
 .btn{
     cursor: pointer;
+}
+
+/*square pattern itself*/
+.pattern{
+    height: 0px;
+    width: 0px;
+    border-bottom: 40px solid rgb(102, 0, 153);
+    border-right: 40px solid rgb(102, 51, 153);
+    border-top: 40px solid rgb(51, 0, 102);
+    border-left: 40px solid rgb(51, 0, 51);
+}
+
+/*right bottom corner*/
+.patternRBC{
+    height: 0px;
+    width: 0px;
+    border-bottom: 40px solid rgb(102, 0, 153);
+    border-right: 40px solid rgb(102, 51, 153);
+    border-top: 40px solid transparent;
+    border-left: 40px solid transparent;
+}
+
+/*left upper corner*/
+.patternLUC{
+    height: 0px;
+    width: 0px;
+    border-top: 40px solid rgb(51, 0, 102);
+    border-left: 40px solid rgb(51, 0, 51);
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid transparent;
 }
 
 .triangleBounds{
@@ -22,4 +61,8 @@ body, html{
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+}
+
+.boundsDebug{
+    border: 1px solid red; 
 }

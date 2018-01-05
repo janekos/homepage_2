@@ -1,9 +1,30 @@
 class Main{
-    constructor(){        
+    constructor(){
+        if(window.location.hash.substr(1) == 0){
+            window.location.hash = "#home";
+            this.changeView("home");
+        }else{
+            this.changeView(window.location.hash.substr(1));   
+        }
+        this.changeSelectedNav(grab(window.location.hash));
         this.bindEvents();
     }
     
-    navCallback(e){
+    changeView(view){
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = (e)=>{ 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                grab("#mainView").innerHTML = xhr.responseText;
+            }
+        }
+
+        xhr.open("GET", "./views/"+view+".html", true);
+        xhr.setRequestHeader('Content-type', 'text/html');
+        xhr.send();
+    }
+    
+    openNav(e){
         grab("#nav").classList.toggle("openedNav");
         applyFnClass(grab(".closedNavElem"), (element)=>{
             element.classList.toggle("openedNav");
@@ -13,28 +34,32 @@ class Main{
         });
     }
     
-    bindEvents(){
-        
-        let navItemClass = grab(".navItem");
-        
+    changeSelectedNav(target){
+        applyFnClass(grab(".navItem"), (element)=>{
+            try{
+                element.classList.remove("selected");
+            }catch(err){}
+        });
+        target.classList.add("selected");
+    }
+    
+    bindEvents(){                
         window.addEventListener("hashchange", (e)=>{
-            console.log(window.location.hash);
+            this.changeView(window.location.hash.substr(1));
         });
         
-        applyEventListenerClass(navItemClass, "click", (e)=>{
+        applyEventListenerClass(grab(".navItem"), "click", (e)=>{
             if(e.target.id === "openNav" || e.target.id === "closeNav"){
-                this.navCallback();
+                this.openNav();
             }else{
-                applyFnClass(navItemClass,(element)=>{
-                    try{
-                        element.classList.remove("selected");
-                    }catch(err){}
-                });
-                e.target.classList.add("selected");
+                this.changeSelectedNav(e.target);
             }
         });
         
-    }
+        grab("#pageTopArrow").addEventListener("click", (e)=>{
+            window.scrollTo(0,0)
+        });
+    }    
 }
 
 new Main();
