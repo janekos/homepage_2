@@ -1,0 +1,57 @@
+#meMyselfAndI{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-content: center;
+}
+
+#pictureOfMe{
+    width: 548px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.homeItem{
+    padding: 10px;
+    width: 45%;
+}
+
+.textTitle{
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-family: "Press Start 2P";
+    text-shadow: 1px 1px 8px lightgray, 
+                 2px 2px 8px lightgray, 
+                 3px 3px 8px lightgray, 
+                 4px 4px 8px lightgray, 
+                 5px 5px 8px lightgray;
+}
+
+.textDiv{
+    text-align: justify;
+    font-size: 20px; 
+}
+
+@media screen and (max-width: 1740px){
+    #meMyselfAndI{justify-content: center;}
+}
+
+@media screen and (max-width: 1400px){
+    .textTitle{font-size: 30px;}
+    .textDiv{font-size: 18px;}
+}
+
+@media screen and (max-width: 1200px){
+    .textTitle{font-size: 35px;}
+    .textDiv{font-size: 20px;}
+    .homeItem{width: 100%; padding: 0px;}
+}
+
+@media screen and (max-width: 940px){
+    #pictureOfMe{width: 348px; height: 440px;}
+    .textTitle{font-size: 35px;}
+    .textDiv{font-size: 20px;}
+    .homeItem{width: 100%; padding: 0px;}
+}

@@ -59,6 +59,11 @@ class Main{
         grab("#pageTopArrow").addEventListener("click", (e)=>{
             window.scrollTo(0,0)
         });
+        window.addEventListener("keyup", (e)=>{
+            if(e.keyCode == 65){
+                console.log("innerWidth: "+window.innerWidth + ", outerWidth: "+ window.outerWidth);
+            }
+        });
     }    
 }
 

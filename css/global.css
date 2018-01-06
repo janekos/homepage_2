@@ -1,9 +1,9 @@
 /*
 colors:
-rgb(102, 0, 153)
-rgb(102, 51, 153)
-rgb(51, 0, 102)
-rgb(51, 0, 51)
+rgb(102, 0, 153) #660099
+rgb(102, 51, 153) #663399
+rgb(51, 0, 102) #330066
+rgb(51, 0, 51) #330033
 */
 body, html{
     margin: 0;
@@ -11,47 +11,53 @@ body, html{
     width: 100%;
     /*height: 100%;*/
     font-family: "Roboto Condensed";
-    /*background-color: rgb(51, 0, 102);
-    color: white;*/
+/*    background: radial-gradient(#EB7A7A, #9E0808);*/
+    color: white;
+    background-color:cadetblue
 }
 
 .btn{
     cursor: pointer;
 }
 
-/*square pattern itself*/
+/*square pattern*/
 .pattern{
     height: 0px;
     width: 0px;
-    border-bottom: 40px solid rgb(102, 0, 153);
-    border-right: 40px solid rgb(102, 51, 153);
-    border-top: 40px solid rgb(51, 0, 102);
-    border-left: 40px solid rgb(51, 0, 51);
-}
-
-/*right bottom corner*/
-.patternRBC{
-    height: 0px;
-    width: 0px;
-    border-bottom: 40px solid rgb(102, 0, 153);
-    border-right: 40px solid rgb(102, 51, 153);
-    border-top: 40px solid transparent;
-    border-left: 40px solid transparent;
-}
-
-/*left upper corner*/
-.patternLUC{
-    height: 0px;
-    width: 0px;
-    border-top: 40px solid rgb(51, 0, 102);
-    border-left: 40px solid rgb(51, 0, 51);
-    border-bottom: 40px solid transparent;
-    border-right: 40px solid transparent;
-}
-
-.triangleBounds{
-    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
-    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    
+    /*#663399 - #330033*/
+    /*#663399 - #47145C*/
+    border-left: 40px solid #47145C;
+    border-top: 40px solid #57247A;
+    border-bottom: 40px solid #5E2B8A;
+    border-right: 40px solid #663399;
+    
+    /*border-left: 40px solid indigo;
+    border-top: 40px solid rebeccapurple;
+    border-bottom: 40px solid darkviolet;
+    border-right: 40px solid blueviolet;*/
+    
+    /*border-left: 40px solid darkslateblue;
+    border-top: 40px solid slateblue;
+    border-bottom: 40px solid mediumslateblue;
+    border-right: 40px solid mediumpurple;*/
+    
+    /*border-left: 40px solid darkred;
+    border-top: 40px solid firebrick;
+    border-bottom: 40px solid crimson;
+    border-right: 40px solid indianred;*/
+    
+    /*#990000 - #FF9999*/
+    border-left: 40px solid #990000;
+    border-top: 40px solid #AD1F1F;
+    border-bottom: 40px solid #DB6363;
+    border-right: 40px solid #FA9191;
+    
+    /*#FF3300 - #FFCC99*/
+    /*border-left: 40px solid #FF4A17;
+    border-top: 40px solid #FF6936;
+    border-bottom: 40px solid #FF8754;
+    border-right: 40px solid #FFAD7A;*/
 }
 
 .noselect {
